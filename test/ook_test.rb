@@ -21,4 +21,18 @@ scope do
 
     assert_equal "foo", k1.call("ECHO")
   end
+
+  test "creates new instances" do
+    k1 = Ook.new(Redic.new, "foo")
+    k2 = k1["bar"]
+
+    assert_equal "foo", k1.to_s
+    assert_equal "foo:bar", k2.to_s
+  end
+
+  test "inspect" do
+    k1 = Ook.new(Redic.new, "foo")
+
+    assert_equal "foo", k1.inspect
+  end
 end

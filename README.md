@@ -13,8 +13,7 @@ Interact with [Redis][redis] keys in an object oriented way.
 # a Redis client and a key.
 k = Ook.new(Redic.new, "foo")
 
-# As it depends on [Nido][nido], you can
-# append strings to the original namespace:
+# You can append strings to the original namespace:
 k["bar"]["baz"].to_s #=> "foo:bar:baz"
 
 # And if you call Redis commands on it,
@@ -27,9 +26,10 @@ k.call("GET")      # GET foo
 Usage
 -----
 
-The external API is very similar to that of [Nido][nido], but in
-addition you need to suply a Redis client. For a compatible
-client, check [Redic][redic].
+You need to suply a Redis client and a key. There are no
+restrictions regarding the type of the Redis client, but it must
+respond to `call` and the signature must be identical to that of
+[Redic][redic].
 
 ```ruby
 ns = Ook.new(Redic.new, "foo")
@@ -47,7 +47,6 @@ And you can use any object as a key, not only strings:
 ns[:bar][42] #=> "foo:bar:42"
 ```
 
-[nido]: https://github.com/soveran/nido
 [redic]: https://github.com/amakawa/redic
 [redis]: http://redis.io
 
