@@ -19,8 +19,8 @@ k["bar"]["baz"].to_s #=> "foo:bar:baz"
 # And if you call Redis commands on it,
 # the key will be inserted as the second
 # parameter when sent to the Redis client:
-k.call("SET", 42") # SET foo 42
-k.call("GET")      # GET foo
+k.call("SET", 42) # SET foo 42
+k.call("GET")     # GET foo
 ```
 
 Usage
