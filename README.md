@@ -23,6 +23,10 @@ k.call("SET", 42) # SET foo 42
 k.call("GET")     # GET foo
 ```
 
+This library is like [Nest][nest], but it doesn't depend on
+[redis-rb][redis-rb]. Instead, the use of [Redic][redic] or
+compatible clients is recommended.
+
 Usage
 -----
 
@@ -49,6 +53,8 @@ ns[:bar][42] #=> "foo:bar:42"
 
 [redic]: https://github.com/amakawa/redic
 [redis]: http://redis.io
+[redis-rb]: https://github.com/redis/redis-rb
+[nest]: https://github.com/soveran/nest
 
 Installation
 ------------
